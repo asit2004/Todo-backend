@@ -6,7 +6,7 @@ import { Todo } from "./models/Todo.js";
 import dotenv from "dotenv"
 dotenv.config()
 const app = express();
-const port = 8080
+const PORT = process.env.PORT || 8080
 
 
 app.use(express.json());
@@ -177,4 +177,5 @@ app.post("/logout", async (req, res) => {
 )
 
 
-app.listen(port, () => console.log(`Server is running on port ${port}`));
+
+app.listen(PORT, () => console.log(`Server running on ${PORT}`));
